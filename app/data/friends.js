@@ -2,18 +2,38 @@ var friendsList = [
    {
     name: "Bruce Lee",
     Photo: "Link",
-    Q1: "1",
-    Q2: "3",
-    Q3: "5",
-    Q4: "1",
-    Q5: "1",
-    Q6: "2",
-    Q7: "3",
-    Q8: "1",
-    Q9: "2",
-    Q10: "1",
+    ans : ["1",
+      "3",
+      "5",
+      "1",
+      "1",
+      "2",
+      "3",
+      "1",
+      "2",
+      "1",
+    ]
+  },
+    {
+      name: "Jackie Chan",
+      Photo: "Link",
+      ans : ["1",
+      "3",
+      "5",
+      "1",
+      "1",
+      "2",
+      "3",
+      "1",
+      "2",
+      "1",
+      ]
     }
   ];
 
+  // console.log(friendsList.length);
+  // for (var i=0; i<friendsList.length; i++){
+  //   console.log(friendsList[i].Q1);
+  // }
   module.exports = {
     friendsList: friendsList};

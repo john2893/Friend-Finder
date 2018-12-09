@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
 
 
     <title>Survey</title>
@@ -53,12 +54,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form>
+                <form action="/survey" method="POST">
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">
+                      <label for="q1">
                             <h5>Q1. Your mind is always buzzing with unexplored ideas and plans</h5>      
                     </label>
-                      <select class="form-control" id=" exampleFormControlSelect1 q1">
+                      <select class="form-control" id="q1">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -67,10 +68,10 @@
                       </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2">
+                        <label for="q2">
                                 <h5>Q2. Generally speaking, you rely more on your experience than your imagination</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect2 q2">
+                        <select class="form-control" id="q2">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -79,10 +80,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect3">
+                        <label for="q3">
                                 <h5>Q3. You find it easy to stay relaxed and focused even when there is some pressure.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect3 q3">
+                        <select class="form-control" id="q3">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -91,10 +92,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">
+                        <label for="q4">
                                 <h5>Q4. You rarely do something just out of sheer curiosity.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect4 q4">
+                        <select class="form-control" id="q4">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -103,10 +104,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect5">
+                        <label for="q5">
                                 <h5>Q5. People can rarely upset you.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect5 q5">
+                        <select class="form-control" id="q5">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -115,10 +116,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect6">
+                        <label for="q6">
                                 <h5>Q6. It is often difficult for you to relate to other people’s feelings.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect6 q6">
+                        <select class="form-control" id="q6">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -127,10 +128,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect7">
+                        <label for="q7">
                                 <h5>Q7. In a discussion, truth should be more important than people’s sensitivities.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect7 q7">
+                        <select class="form-control" id="q7">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -139,10 +140,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect8">
+                        <label for="q8">
                                 <h5>Q8. You rarely get carried away by fantasies and ideas.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect8 q8">
+                        <select class="form-control" id="q8">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -151,10 +152,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect9">
+                        <label for="q9">
                                 <h5>Q9. You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect9 q9">
+                        <select class="form-control" id="q9">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -163,10 +164,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect10">
+                        <label for="q10">
                                 <h5>Q10. You feel more energetic after spending time with a group of people.</h5>      
                         </label>
-                        <select class="form-control" id="exampleFormControlSelect10 q10">
+                        <select class="form-control" id="q10">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -178,37 +179,80 @@
                                          
                     
                 </form>
+                <div class="modal fade" id="exampleModalCenter" id = "thisModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Your Match</h3>
+                            <h5 id="matchName"></h5>
+                            <img id="matchPhoto" src="" alt="No Image" width = 250px>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 <div>
                     <button type="submit" class="btn btn-primary mb-2" id="submitThis">Submit</button> 
                 </div>
                 <script type="text/javascript">
+                jQuery(document).ready(function($){
+
+                
                     $("#submitThis").on("click", function(event){
                         event.preventDefault();
-                        alert ("hi");
+                      
                         var newFriend = {
                             name: $("#name").val().trim(),
                             Photo: $("#photo").val().trim(),
-                            Q1: $("#q1").val().trim(),
-                            Q2: $("#q2").val().trim(),
-                            Q3: $("#q3").val().trim(),
-                            Q4: $("#q4").val().trim(),
-                            Q5: $("#q5").val().trim(),
-                            Q6: $("#q6").val().trim(),
-                            Q7: $("#q7").val().trim(),
-                            Q8: $("#q8").val().trim(),
-                            Q9: $("#q9").val().trim(),
-                            Q10: $("#q10").val().trim(),
-                        }
+                            ans:[$("#q1").val().trim(),
+                            $("#q2").val().trim(),
+                            $("#q3").val().trim(),
+                            $("#q4").val().trim(),
+                            $("#q5").val().trim(),
+                            $("#q6").val().trim(),
+                            $("#q7").val().trim(),
+                            $("#q8").val().trim(),
+                            $("#q9").val().trim(),
+                            $("#q10").val().trim()]
+                        };
                         console.log(newFriend);
-                        $.ajax("/api/friends", 
-                        {
-                            type:"POST",
-                            data:newFriend
-                        }).then(function(data) {
-                            console.log("survey.html", data);
-                            alert("Adding Friend.");
+                        console.log("hello 2")
+                        alert ("hellp2 ")
+                        
+
+                        $.post("/api/friends", newFriend)
+                        .then(function(data) {
+                            console.log(data);
+                            $("#matchName").text(data.name);
+                            $("#matchPhoto").attr("src", data.Photo);
+                            $('#thisModal').modal();
+                            alert("Adding character...");
+                            $('#name').val(" ");
+                            $('#photo').val("");
+                            $('#q1').val("");
+                            $('#q2').val("");
+                            $('#q3').val("");
+                            $('#q4').val("");
+                            $('#q5').val("");
+                            $('#q6').val("");
+                            $('#q7').val("");
+                            $('#q8').val("");
+                            $('#q9').val("");
+                            $('#q10').val("");
                         });
+
+                       
                     })
+                });
                     
                 </script>
             </div> <!-- col -->
