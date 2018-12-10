@@ -17,10 +17,10 @@ module.exports = function(){
     apiRoutes.post("/api/friends", function(req, res) {
       // req.body hosts is equal to the JSON post sent from the user
       // This works because of our body parsing middleware
-      var newFriend = req.body.ans;
+      var newFriend = req.body;
       console.log(newFriend)
       console.log(" +++++++++++++++ ");
-     
+     var newFriendArr = req.body.ans;
 
       var newArr = [];
       var match = 0;
@@ -28,8 +28,13 @@ module.exports = function(){
       for (var i=0; i<friends.friendsList.length; i++){
         
         var differ = 0;
-        for (var j=0; j<newArr.length; j++){
-          differ  += (Math.abs(parseInt(friends.friendsList[i].ans[j]) - parseInt(newFriend[j])));
+        for (var j=0; j<newFriendArr.length; j++){
+          differ += (Math.abs(parseInt(friends.friendsList[i].ans[j]) - parseInt(newFriendArr[j])));
+          console.log( " this is from api route")
+          console.log(friends.friendsList[i].ans[j]);
+          console.log(newFriendArr[j]);
+          console.log(Math.abs(0));
+          console.log(differ);
         }
         newArr.push(differ);
       }
@@ -40,16 +45,16 @@ module.exports = function(){
       }
       // console.log(newFriend);
       // alert ( " testing api POST");
+      var bestMatch = friends.friendsList[match];
       friends.friendsList.push(newFriend);
 
-      return res.json(newFriend)
+      // return res.json(newFriend)
+      return res.json(bestMatch);
 
   
     });
   
-    apiRoutes.get('/api/page2', (req, res) => {
-      res.send('Api page2');
-    });
+  
   
   
     return apiRoutes;
